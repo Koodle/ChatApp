@@ -1,0 +1,3 @@
+-define functions
+    -form validation
+    -check auth token is passed on each request

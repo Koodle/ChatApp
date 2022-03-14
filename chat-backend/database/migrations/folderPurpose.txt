@@ -1,0 +1,3 @@
+A model is a class representation of a database column. 
+A migration is the database table schema, it simply describes the database columns.
+Migrations are files that have commands for changing your database (creating tables, changing tables using alter , dropping tables etc).

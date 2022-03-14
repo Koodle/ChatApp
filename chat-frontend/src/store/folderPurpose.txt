@@ -1,0 +1,2 @@
+store folder is for REDUX STORE MANAGEMENT (reducers, actions, all types)
+Store represents a place that brings together actions and reducers & keeps a hold of our application state.
