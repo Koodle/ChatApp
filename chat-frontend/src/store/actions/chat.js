@@ -22,7 +22,7 @@ export const fetchChats = () => dispatch => {
                 chat.Messages.reverse()
             });
 
-            //dispatch action
+            //dispatch reducer
             dispatch({ type: FETCH_CHATS, payload: data })
             return data
         })

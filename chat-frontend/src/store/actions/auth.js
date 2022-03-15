@@ -15,7 +15,7 @@ export const login = (params, useNavigate) => (dispatch) => {  //how do we chain
     return AuthService.login(params)
         .then((data)=>{
             //https://stackoverflow.com/questions/61286885/how-action-and-reducers-are-connected-with-each-other-in-react-redux
-            dispatch({type: LOGIN, payload:data})  //dispatch the action  //why don't we reference the relevant Reducer for this action //how do we call the reducer //how does the dispatch function know where the reducer is?
+            dispatch({type: LOGIN, payload:data})  //dispatch the reducer  //why don't we reference the relevant Reducer for this action //how do we call the reducer //how does the dispatch function know where the reducer is?
             useNavigate("/")   //Navigate to chat screen
         })
         .catch(err => {

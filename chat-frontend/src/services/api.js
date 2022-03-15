@@ -8,20 +8,25 @@ import {logout} from "../store/actions/auth"
 
 
 //creates an AXIOS instance used to make requests to the Back-End
-const API = axios.create({
-    baseURL: "http://127.0.0.1:3000",
-    headers: {
-        "Accept": "application/json",
-        "Authorization": `Bearer ${localStorage.getItem("token").replace(/^"(.*)"$/, '$1') || ""}`  //check if we already have a token and set it
-    }
-})
 // const API = axios.create({
 //     baseURL: "http://127.0.0.1:3000",
 //     headers: {
 //         "Accept": "application/json",
-//         "Authorization": `Bearer ${localStorage.getItem("token").replace(/^"(.*)"$/, '$1') ? typeof(localStorage.getItem("token").replace(/^"(.*)"$/, '$1'))!== undefined : ""}`  //check if we already have a token and set it
+//         "Authorization": `Bearer ${localStorage.getItem("token").replace(/^"(.*)"$/, '$1') || ""}`  //check if we already have a token and set it
 //     }
 // })
+
+let token = ""
+
+localStorage.hasOwnProperty('token') ? token = localStorage.getItem("token").replace(/^"(.*)"$/, '$1') : token = ""
+
+const API = axios.create({
+    baseURL: "http://127.0.0.1:3000",
+    headers: {
+        "Accept": "application/json",
+        "Authorization": token
+    }
+})
 
 
 //create interceptor to listen to errors

@@ -9,15 +9,17 @@ import { setCurrentChat } from '../../../../store/actions/chat';
 import "./FriendList.scss"
 
 const Friendlist = () => {
-
     const dispatch = useDispatch()
 
+    //access chats from Store
     const chats = useSelector(state => state.chatReducer.chats)
 
+    //set the chats in Store
     const openChat = (chat) => {
         dispatch(setCurrentChat(chat))
-
     }
+
+    
 
     return (
         <div id='friends' className='shadow-light'>
@@ -29,7 +31,7 @@ const Friendlist = () => {
             <hr />
 
             <div id='friends-box'> 
-                {
+                {                  
                     chats.length > 0
                     ? chats.map(chat => {
                         return <Friend click={() => openChat(chat)} chat={chat} key={chat.id}/>

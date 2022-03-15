@@ -1,2 +1,6 @@
 package-lock.json
 node_modules/
+chat-backend/node_modules/
+chat-backend/package-lock.json
+chat-frontend/node_modules/
+chat-frontend/package-lock.json

@@ -45,8 +45,6 @@ exports.index = async (req, res) => {
             }
         ]
     })
-    console.log("user.chats");
-    console.log(user.Chats);
     return res.json(user.Chats)
 }
 
